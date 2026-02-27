@@ -24,3 +24,13 @@ int main(){
         printf("not found");
     }
 }
+
+output:-
+Enter size of array4
+1
+2
+3
+4
+element for the search3
+element in index:2
+Process returned 0 (0x0)   execution time : 6.466 s

@@ -23,3 +23,12 @@ int main(){
 
 
 }
+
+output:-
+Enter size of array4
+1
+1
+2
+3
+no:1 is repeated 1 times
+Process returned 0 (0x0)   execution time : 3.874 s

@@ -1,0 +1,150 @@
+LINEAR:-
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int i,n,s, flag;
+    flag=0;
+    printf("Enter size of array");
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+
+    }
+    printf("element for the search");
+    scanf("%d",&s);
+
+    for(i=0;i<n;i++){
+        if(a[i]==s){
+            printf("element in index:%d",i);
+            flag=1;
+        }
+    }
+    if(flag==0){
+        printf("not found");
+    }
+}
+
+output:-
+Enter size of array4
+1
+2
+3
+4
+element for the search3
+element in index:2
+Process returned 0 (0x0)   execution time : 6.466 s
+
+BINARY:-
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int i,n,c;
+    printf("Enter size of array");
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+
+    }
+
+    for(i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(a[i]== a[j]){
+                c=c+1;
+                printf("no:%d is repeated %d times",a[i],c);
+            }
+        }
+        c=0;
+    }
+
+
+}
+
+output:-
+Enter size of array4
+1
+2
+3
+4
+element for the search:3
+element: 3 found
+Process returned 0 (0x0)   execution time : 7.662 s
+
+DUPLICATE:-
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int i,n,c;
+    printf("Enter size of array");
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+
+    }
+
+    for(i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(a[i]== a[j]){
+                c=c+1;
+                printf("no:%d is repeated %d times",a[i],c);
+            }
+        }
+        c=0;
+    }
+
+
+}
+
+output:-
+Enter size of array4
+1
+1
+2
+3
+no:1 is repeated 1 times
+Process returned 0 (0x0)   execution time : 3.874 s
+
+
+SMALLEST:-
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int i,n,c;
+    printf("Enter size of array");
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+
+    }
+
+    for(i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(a[i]== a[j]){
+                c=c+1;
+                printf("no:%d is repeated %d times",a[i],c);
+            }
+        }
+        c=0;
+    }
+
+
+}
+Enter size of array4
+2
+3
+4
+5
+smallest:2
+Process returned 0 (0x0)   execution time : 4.779 s
+

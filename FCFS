@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, i;
+
+    printf("Enter number of processes to be scheduled : ");
+    scanf("%d",&n);
+
+    int AT[n],BT[n],CT[n];
+    float totalTAT=0,totalWT=0,totalRT=0;
+
+    for(i = 0; i < n; i++)
+    {
+        printf("\nProcess %d\n", i+1);
+        printf("Arrival Time: ");
+        scanf("%d", &AT[i]);
+        printf("Burst Time: ");
+        scanf("%d", &BT[i]);
+    }
+
+    CT[0] = AT[0] + BT[0];
+    totalTAT += CT[0] - AT[0];
+    totalWT += (CT[0] - AT[0]) - BT[0];
+    totalRT += (CT[0] - AT[0]) - BT[0];
+
+    for(i = 1; i < n; i++)
+    {
+        if(CT[i-1]<AT[i])
+        {
+            CT[i]=AT[i] + BT[i];
+        }
+        else
+        {
+            CT[i]=CT[i-1] + BT[i];
+        }
+
+        totalTAT += CT[i] - AT[i];
+        totalWT += (CT[i] - AT[i]) - BT[i];
+        totalRT += (CT[i] - AT[i]) - BT[i];
+    }
+
+output:-
+Enter number of processes to be scheduled :
+4
+
+Process 1
+Arrival Time: 0
+Burst Time: 3
+
+Process 2
+Arrival Time: 0
+Burst Time: 5
+
+Process 3
+Arrival Time: 0
+Burst Time: 2
+
+Process 4
+Arrival Time: 0
+Burst Time: 8
+
+Average Turnaround Time = 9.75
+Average Waiting Time = 5.25
+Average Response Time = 5.25
